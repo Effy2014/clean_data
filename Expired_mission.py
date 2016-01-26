@@ -91,26 +91,3 @@ with open('results.csv', 'wb') as csvfile:
     csvwriter.writerow(expired_others.columns.values)
     for i in range(expired_others.shape[0]):
          csvwriter.writerow(expired_others.loc[i,])
-
-
-# In[71]:
-
-pieces = {'less than 7 days remaining-has donation': has_donation, 
-          'less than 7 days remaining-has >20 visits': has_visit,
-          'rest in remaining mission' : expiring_others,
-          '0 days remaining - has donation': had_donation,
-          '0 days remaining - has >20 visits' : had_visit,
-          'rest in expired mission' : expired_others,}
-
-result = pd.concat(pieces)
-
-
-# In[72]:
-
-result.to_csv("results.csv")
-
-
-# In[ ]:
-
-
-
